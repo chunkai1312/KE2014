@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="KE2014" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\ChunKai\\Documents\\Visual\ Studio\ 2012\\Projects\\KE2014\\KE2014\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\ChunKai\\Documents\\Visual\ Studio\ 2012\\Projects\\KE2014\\KE2014\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="connString-Web.config Connection String" description="" value="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\ke2014_sample_data.accdb" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ChunKai\\Documents\\Visual\ Studio\ 2012\\Projects\\KE2014\\KE2014\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='connString']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-KE2014-20140315002515;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-KE2014-20140315002515.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ChunKai\\Documents\\Visual\ Studio\ 2012\\Projects\\KE2014\\KE2014\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

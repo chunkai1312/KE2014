@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | 知識工程 2014 HW1</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/alertify.core.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/alertify.default.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/layout.css")" />
+    <script src="@Url.Content("~/Scripts/js/jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/js/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/Scripts/js/alertify.js")"></script>
+</head>
+<body>
+    <div id="wrap">
+        @Html.Partial("_HeaderPartial")
+        @RenderBody()
+    </div>
+    @Html.Partial("_FooterPartial")
+    <script src="@Url.Content("~/Scripts/js/custom.js")"></script>
+</body>
+</html>

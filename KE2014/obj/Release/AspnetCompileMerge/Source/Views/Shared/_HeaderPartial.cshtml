@@ -1,0 +1,27 @@
+﻿<div id="header" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")"><strong>知識工程 2014 HW1</strong></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("影劇娛樂", "Index", "Category", new { id = @KE2014.Models.DataContext.ENTERTAINMENT }, new { @id = "entertainment-link" })</li>
+                <li>@Html.ActionLink("運動", "Index", "Category", new { id = @KE2014.Models.DataContext.SPORTS }, new { @id="sports-link"})</li>
+                <li>@Html.ActionLink("兩岸", "Index", "Category", new { id = @KE2014.Models.DataContext.MAINLAND }, new { @id="mainland-link"})</li>
+                <li>@Html.ActionLink("財經", "Index", "Category", new { id = @KE2014.Models.DataContext.FINANCE }, new { @id="finance-link"})</li>
+                <li>@Html.ActionLink("保健", "Index", "Category", new { id = @KE2014.Models.DataContext.HEALTH }, new { @id="health-link"})</li>
+                <li>@Html.ActionLink("政治", "Index", "Category", new { id = @KE2014.Models.DataContext.POLITICS }, new { @id="politics-link"})</li>
+                <li>@Html.ActionLink("社會", "Index", "Category", new { id = @KE2014.Models.DataContext.SOCIETY }, new { @id="society-link"})</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+

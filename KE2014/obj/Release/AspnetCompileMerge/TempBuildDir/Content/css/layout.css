@@ -1,0 +1,160 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+body,h1,h2,h3,h4,h5,h6,small, table, p, div, span, form, input, textarea, select, pre, button { font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", AppleGothic, Dotum, Lucida Grande, Verdana Sans-serif; }
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0px auto -50px;
+  /* Pad bottom by footer height */
+  padding: 50px 0 50px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 50px;
+}
+
+/* Header & Footer view CSS
+-------------------------------------------------- */
+#header {
+	background-color: #266d96;
+	border-color: #1c4f6d;
+}
+
+#footer {
+	background-color: #266d96;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #ffffff;
+}
+
+#footer > .container .credit {
+  margin: 15px 0;
+}
+
+/* NavBar Style
+-------------------------------------------------- */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #cde5ff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #cde5ff;
+    background-color: #1c4f6d;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #cde5ff;
+    background-color: #1c4f6d;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #cde5ff;
+    background-color: #1c4f6d;
+}
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #afd6ff;
+    border-bottom-color: #cde5ff;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #cde5ff;
+    border-bottom-color: #cde5ff;
+}
+.navbar-default .navbar-toggle {
+    border-color: #1c4f6d;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #1c4f6d;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+
+/* Home page CSS
+-------------------------------------------------- */
+#home-banner {
+	background-image: url(../../Images/banner.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#home-banner > .container {
+	padding: 0px; 
+	padding-top: 450px; 
+	height: 720px;
+}
+
+#home-banner .bannerword {
+	font-size: 48px;
+	font-weight: bold;
+	color: rgba(100%,100%,100%,0.8);
+	text-shadow:1px  1px  1px  rgba(0,0,0,0.2);
+}
+
+#home-content {
+    padding: 30px 0 30px 0; 
+	/*background-color: #ebf5ff;*/ 
+    border-top: 5px solid #808080;
+    border-bottom: 5px solid #808080;
+    background-image: url(../../Images/bg.png);
+}
+
+#home-content h1 {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+#home-content .group-leader {
+    margin: 30px 0 20px 0; 
+}
+
+#home-content .group-member {
+    margin: 20px 0 50px 0; 
+}
+
+#home-content > .container {
+
+}
+
+#home-content .member {
+    width: 240px;
+}
+
+#home-content .member-intro {
+    margin: 20px 0 0 0;
+}
+
+/* Category page CSS
+-------------------------------------------------- */
+#main-content > .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
