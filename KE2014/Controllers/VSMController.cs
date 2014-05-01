@@ -1,5 +1,6 @@
 ﻿using KE2014.Models;
 using KE2014.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,9 +46,21 @@ namespace KE2014.Controllers
 
             List<string> keywordList = Models.VSMContext.GetKeywords(); // 取得關鍵字
             Dictionary<string, Document> documents = Models.VSMContext.GetDocuments(); // 取得文件內容 (DocID => Document)
-            Dictionary<string, List<Axis>> docVectors = Models.VSMContext.GetDocVectors(documents, keywordList); // 取得文件向量 (DocID => Vector)
             Dictionary<string, List<string>> keywordDocs = Models.VSMContext.GetKeywordDocs(documents, keywordList); // 取得關鍵字所在文件 (Keyword => DocList)
-            docVectors = Models.VSMContext.CalcTFIDF(docVectors, documents, keywordDocs); // 計算 TF-IDF
+            Dictionary<string, List<Axis>> docVectors; // 文件向量 (DocID => Vector)
+
+            if (Models.VSMContext.IsExistVectorsFile()) // 檢查是否存在文件向量檔
+            {
+                string json = Models.VSMContext.ReadVectorsFile(); // 讀取文件向量檔
+                docVectors = (Dictionary<string, List<Axis>>)JsonConvert.DeserializeObject(json, typeof(Dictionary<string, List<Axis>>));          
+            }
+            else
+            {
+                docVectors = Models.VSMContext.GetDocVectors(documents, keywordList); // 取得文件向量檔
+                docVectors = Models.VSMContext.CalcTFIDF(docVectors, documents, keywordDocs); // 計算 TF-IDF
+                string json = JsonConvert.SerializeObject(docVectors);
+                Models.VSMContext.WriteVectorsFile(json);
+            }
 
             // 設置查詢文件
             string queryID = QUERY_DOCS[id - 1];

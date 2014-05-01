@@ -121,6 +121,6 @@ C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant\WebMatrix.Data.resources.dll
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant\Microsoft.Web.WebPages.OAuth.resources.dll
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant\WebMatrix.WebData.resources.dll
+C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Release\KE2014.csprojResolveAssemblyReference.cache
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Release\KE2014.dll
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Release\KE2014.pdb
-C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Release\KE2014.csprojResolveAssemblyReference.cache

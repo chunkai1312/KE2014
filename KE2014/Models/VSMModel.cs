@@ -433,5 +433,49 @@ namespace KE2014.Models
 
             return keywords;
         }
+
+        /// <summary>
+        /// 讀出文件向量檔
+        /// </summary>
+        /// <returns></returns>
+        public static string ReadVectorsFile()
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt");
+
+            StreamReader reader = new StreamReader(path, Encoding.UTF8);
+            string json = reader.ReadToEnd();
+            reader.Close();
+
+            return json;
+        }
+
+        /// <summary>
+        /// 寫入文件向量檔
+        /// </summary>
+        /// <param name="content"></param>
+        public static void WriteVectorsFile(string content)
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt");
+
+            StreamWriter writer = new StreamWriter(path);
+            writer.WriteLine(content);
+            writer.Close();
+        }
+
+        /// <summary>
+        /// 檢查是否存在文件向量檔
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsExistVectorsFile()
+        {
+            bool isExistVectorsFile = false;
+
+            if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt")))
+            {
+                isExistVectorsFile = true;
+            }
+
+            return isExistVectorsFile;
+        }
     }
 }
