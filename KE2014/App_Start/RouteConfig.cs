@@ -14,9 +14,15 @@ namespace KE2014
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Category",
+                name: "VSM",
                 url: "{controller}/{id}",
-                defaults: new { controller = "Category", action = "Index"}
+                defaults: new { controller = "VSM", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "TFIDF",
+                url: "{controller}/{id}",
+                defaults: new { controller = "TFIDF", action = "Index"}
             );
 
             routes.MapRoute(

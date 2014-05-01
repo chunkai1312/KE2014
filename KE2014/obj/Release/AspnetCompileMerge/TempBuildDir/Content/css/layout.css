@@ -67,6 +67,18 @@ body {
     color: #cde5ff;
     background-color: #1c4f6d;
 }
+
+.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #266d96;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #cde5ff;
+    background-color: #1c4f6d;
+}
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {

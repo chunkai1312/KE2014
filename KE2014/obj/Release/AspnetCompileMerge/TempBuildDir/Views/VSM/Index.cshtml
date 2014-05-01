@@ -1,0 +1,82 @@
+﻿@model KE2014.ViewModels.VSMIndexViewModel
+@{
+    ViewBag.Title = "VSM and Summary";
+}
+
+<div id="main-content">
+    <div id="container" class="container">
+        <h3 class="text-center text-primary"><strong>Similar Results</strong></h3>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Doc ID</th>
+                    <th class="text-center">Source</th>
+                    <th class="text-center">Section</th>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Score</th>
+                    <th class="text-center">Keywords</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">Query</td>
+                    <td class="text-center">@ViewBag.QueryID</td>
+                    <td class="text-center">@ViewBag.QuerySource</td>
+                    <td class="text-center">@ViewBag.QuerySection</td>
+                    <td class="text-left">@ViewBag.QueryTitle</td>
+                    <td class="text-center">-</td>
+                    <td class="text-left"><strong>@ViewBag.QueryKeywords</strong></td>
+                </tr>
+            @{int rank = 0;}
+            @foreach (KE2014.Models.SimilarDoc doc in this.Model.SimilarDocs)
+            {
+                rank++;
+                <tr>
+                    <td class="text-center">@rank</td>
+                    <td class="text-center">@doc.ID</td>
+                    <td class="text-center">@doc.Source</td>
+                    <td class="text-center">@doc.Section</td>
+                    <td class="text-left">@doc.Title</td>
+                    <td class="text-center">@doc.Score</td>
+                    <td class="text-left">
+                    @foreach (string keyword in doc.Keywords)
+                    {
+                        <strong>@keyword&nbsp;</strong>
+                    }
+                    </td>
+                </tr>            
+            }
+            </tbody>
+        </table>
+
+        <h3 class="text-center text-primary"><strong>Summary</strong> <small>from #1 doc</small></h3>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Text</th>
+                    <th class="text-center">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int sent = 0;}
+                @foreach (KE2014.Models.Sentence sentence in this.Model.Summary)
+                {
+                    sent++;
+                    <tr>
+                        <td class="text-center">@sent</td>
+                        <td class="text-left">@sentence.Text</td>
+                        <td class="text-center">@sentence.Score</td>
+                    </tr>            
+                }
+            </tbody>
+        </table>
+
+        <p class="text-right"><small>Page rendered in @ViewData["_ElapsedTime"] seconds.</small></p>
+        <script>
+            $(function () { alertify.success("Page rendered in @ViewData["_ElapsedTime"] seconds."); });
+        </script>
+    </div>
+</div>
+

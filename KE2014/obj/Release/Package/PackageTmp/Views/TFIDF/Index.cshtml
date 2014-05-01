@@ -1,0 +1,42 @@
+﻿@model Dictionary<string, KE2014.Models.Frequency>
+@{
+    ViewBag.Title = ViewBag.Category;
+}
+
+<div id="main-content">
+    <div id="container" class="container">
+        <h3 class="text-center text-primary"><strong>@ViewBag.Category</strong> <small>( N = @ViewBag.Count )</small></h3>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th class="text-center">Rank</th>
+                    <th class="text-center">Term</th>
+                    <th class="text-center visible-xs visible-sm">TF</th>
+                    <th class="text-center visible-md visible-lg">Term Frequency</th>
+                    <th class="text-center visible-xs visible-sm">DF</th>
+                    <th class="text-center visible-md visible-lg">Document Frequency</th>
+                    <th class="text-center">TF-IDF</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int rank = 0;}
+                @foreach (KeyValuePair<string, KE2014.Models.Frequency> data in this.Model)
+                {
+                    rank++;
+                    <tr>
+                        <td class="text-center">@rank</td>
+                        <td class="text-center">@data.Key</td>
+                        <td class="text-center">@data.Value.TermFrequency</td>
+                        <td class="text-center">@data.Value.DocumentFrequency</td>
+                        <td class="text-center">@data.Value.TFIDF</td>
+                    </tr>            
+                }
+            </tbody>
+        </table>
+        <p class="text-right"><small>Page rendered in @ViewData["_ElapsedTime"] seconds.</small></p>
+        <script>
+            $(function () { alertify.success("Page rendered in @ViewData["_ElapsedTime"] seconds."); });
+        </script>
+    </div>
+</div>
+

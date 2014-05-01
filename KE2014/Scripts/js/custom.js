@@ -34,4 +34,34 @@ $(document).ready(function () {
     $('#society-link').click(function () {
         loading();
     });
+    $('#query-doc1-link').click(function () {
+        loading();
+    });
+    $('#query-doc2-link').click(function () {
+        loading();
+    });
+    $('#query-doc3-link').click(function () {
+        loading();
+    });
+    $('#query-doc4-link').click(function () {
+        loading();
+    });
+    $('#query-doc5-link').click(function () {
+        loading();
+    });
+    $('#query-doc6-link').click(function () {
+        loading();
+    });
+    $('#query-doc7-link').click(function () {
+        loading();
+    });
+    $('#query-doc8-link').click(function () {
+        loading();
+    });
+    $('#query-doc9-link').click(function () {
+        loading();
+    });
+    $('#query-doc10-link').click(function () {
+        loading();
+    });
 });

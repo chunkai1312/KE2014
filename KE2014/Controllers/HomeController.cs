@@ -12,7 +12,6 @@ namespace KE2014.Controllers
     {
         public ActionResult Index()
         {
-           // ViewBag.Message = "Home Page";
             return View();
         }
     }

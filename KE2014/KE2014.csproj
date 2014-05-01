@@ -162,12 +162,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\TFIDFController.cs" />
+    <Compile Include="Controllers\VSMController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModels.cs" />
+    <Compile Include="Models\VSMModel.cs" />
+    <Compile Include="Models\TFIDFModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\VSMIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ke2014_sample_data.accdb" />
@@ -178,6 +181,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\layout.css" />
+    <Content Include="Content\files\keywords.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
@@ -187,7 +191,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\ke2014_hw1_m10209122_m10209124_m10209212_m10209216_.xlsx" />
+    <Content Include="Content\files\ke2014_hw1_m10209122_m10209124_m10209212_m10209216_.xlsx" />
     <None Include="Properties\PublishProfiles\KE2014.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\banner.png" />
@@ -232,7 +236,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_HeaderPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\TFIDF\Index.cshtml" />
+    <Content Include="Views\VSM\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filters\" />

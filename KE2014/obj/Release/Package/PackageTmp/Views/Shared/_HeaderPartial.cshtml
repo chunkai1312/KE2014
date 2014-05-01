@@ -6,17 +6,37 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")"><strong>知識工程 2014 HW1</strong></a>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")"><strong>知識工程 2014</strong></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li>@Html.ActionLink("影劇娛樂", "Index", "Category", new { id = @KE2014.Models.DataContext.ENTERTAINMENT }, new { @id = "entertainment-link" })</li>
-                <li>@Html.ActionLink("運動", "Index", "Category", new { id = @KE2014.Models.DataContext.SPORTS }, new { @id="sports-link"})</li>
-                <li>@Html.ActionLink("兩岸", "Index", "Category", new { id = @KE2014.Models.DataContext.MAINLAND }, new { @id="mainland-link"})</li>
-                <li>@Html.ActionLink("財經", "Index", "Category", new { id = @KE2014.Models.DataContext.FINANCE }, new { @id="finance-link"})</li>
-                <li>@Html.ActionLink("保健", "Index", "Category", new { id = @KE2014.Models.DataContext.HEALTH }, new { @id="health-link"})</li>
-                <li>@Html.ActionLink("政治", "Index", "Category", new { id = @KE2014.Models.DataContext.POLITICS }, new { @id="politics-link"})</li>
-                <li>@Html.ActionLink("社會", "Index", "Category", new { id = @KE2014.Models.DataContext.SOCIETY }, new { @id="society-link"})</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">TF-IDF <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("影劇娛樂", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.ENTERTAINMENT }, new { @id = "entertainment-link" })</li>
+                        <li>@Html.ActionLink("運動", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.SPORTS }, new { @id="sports-link"})</li>
+                        <li>@Html.ActionLink("兩岸", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.MAINLAND }, new { @id="mainland-link"})</li>
+                        <li>@Html.ActionLink("財經", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.FINANCE }, new { @id="finance-link"})</li>
+                        <li>@Html.ActionLink("保健", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.HEALTH }, new { @id="health-link"})</li>
+                        <li>@Html.ActionLink("政治", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.POLITICS }, new { @id="politics-link"})</li>
+                        <li>@Html.ActionLink("社會", "Index", "TFIDF", new { id = @KE2014.Models.TFIDFContext.SOCIETY }, new { @id="society-link"})</li>
+                    </ul>
+                </li> 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">VSM and Summary <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("1393924219057_1_N01", "Index", "VSM", new { id = 1 }, new { @id = "query-doc1-link" })</li>
+                        <li>@Html.ActionLink("1393793583281_N01", "Index", "VSM", new { id = 2 }, new { @id = "query-doc2-link" })</li>
+                        <li>@Html.ActionLink("1393792680648_N01", "Index", "VSM", new { id = 3 }, new { @id = "query-doc3-link" })</li>
+                        <li>@Html.ActionLink("1393903770008_N01", "Index", "VSM", new { id = 4 }, new { @id = "query-doc4-link" })</li>
+                        <li>@Html.ActionLink("1394180338658_N01", "Index", "VSM", new { id = 5 }, new { @id = "query-doc5-link" })</li>
+                        <li>@Html.ActionLink("1394105127891_N01", "Index", "VSM", new { id = 6 }, new { @id = "query-doc6-link" })</li>
+                        <li>@Html.ActionLink("1393816909339_N01", "Index", "VSM", new { id = 7 }, new { @id = "query-doc7-link" })</li>
+                        <li>@Html.ActionLink("1393619466219_N01", "Index", "VSM", new { id = 8 }, new { @id = "query-doc8-link" })</li>
+                        <li>@Html.ActionLink("1393619409139_N01", "Index", "VSM", new { id = 9 }, new { @id = "query-doc9-link" })</li>
+                        <li>@Html.ActionLink("1394051127145_N01", "Index", "VSM", new { id = 10 }, new { @id = "query-doc10-link" })</li>
+                    </ul>
+                </li> 
             </ul>
         </div>
     </div>
