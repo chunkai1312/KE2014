@@ -46,20 +46,34 @@ namespace KE2014.Controllers
 
             List<string> keywordList = Models.VSMContext.GetKeywords(); // 取得關鍵字
             Dictionary<string, Document> documents = Models.VSMContext.GetDocuments(); // 取得文件內容 (DocID => Document)
-            Dictionary<string, List<string>> keywordDocs = Models.VSMContext.GetKeywordDocs(documents, keywordList); // 取得關鍵字所在文件 (Keyword => DocList)
+            Dictionary<string, List<string>> keywordDocs; // 關鍵字所在文件 (Keyword => DocList)
             Dictionary<string, List<Axis>> docVectors; // 文件向量 (DocID => Vector)
 
-            if (Models.VSMContext.IsExistVectorsFile()) // 檢查是否存在文件向量檔
+
+            if (Models.VSMContext.IsExistKeywordDocsFile()) // 檢查是否存在 keyword_docs.txt 
             {
-                string json = Models.VSMContext.ReadVectorsFile(); // 讀取文件向量檔
+                string json = Models.VSMContext.ReadKeywordDocsFile(); // 讀取 keyword_docs.txt (JSON format)
+                keywordDocs = (Dictionary<string, List<string>>)JsonConvert.DeserializeObject(json, typeof(Dictionary<string, List<string>>));
+            }
+            else // 若無, 則建立關鍵字所在文件之 Dictionary 並寫入 keyword_docs.txt
+            {
+                keywordDocs = Models.VSMContext.GetKeywordDocs(documents, keywordList); // 取得關鍵字
+                string json = JsonConvert.SerializeObject(keywordDocs); // 將 Dictionary 序列化為 JSON 格式
+                Models.VSMContext.WriteKeywordDocsFile(json); // 寫入檔案
+            }
+
+
+            if (Models.VSMContext.IsExistDocVectorsFile()) // 檢查是否存在 doc_vertors.txt
+            {
+                string json = Models.VSMContext.ReadDocVectorsFile(); // 讀取 doc_vertors.txt (JSON format)
                 docVectors = (Dictionary<string, List<Axis>>)JsonConvert.DeserializeObject(json, typeof(Dictionary<string, List<Axis>>));          
             }
-            else
+            else // 若無, 則建立文件向量之 Dictionary 並寫入 doc_vertors.txt
             {
-                docVectors = Models.VSMContext.GetDocVectors(documents, keywordList); // 取得文件向量檔
+                docVectors = Models.VSMContext.GetDocVectors(documents, keywordList); // 取得文件向量
                 docVectors = Models.VSMContext.CalcTFIDF(docVectors, documents, keywordDocs); // 計算 TF-IDF
-                string json = JsonConvert.SerializeObject(docVectors);
-                Models.VSMContext.WriteVectorsFile(json);
+                string json = JsonConvert.SerializeObject(docVectors); // 將 Dictionary 序列化為 JSON 格式
+                Models.VSMContext.WriteDocVectorsFile(json); // 寫入檔案
             }
 
             // 設置查詢文件
@@ -78,7 +92,7 @@ namespace KE2014.Controllers
             }
             ViewBag.QueryKeywords = keywords;
 
-            List<SimilarDoc> similarDocs = Models.VSMContext.GetSimilarDocs(queryID, 6, docVectors, documents); // 取得相似文件
+            List<SimilarDoc> similarDocs = Models.VSMContext.GetSimilarDocs(queryID, 6, docVectors, documents); // 取得相似文件之 List
             string firstSimilarDocID = similarDocs[0].ID; // 取得第一筆相似文件ID
             List<Sentence> summary = Models.VSMContext.GetDocSummary(documents[firstSimilarDocID].Content, 3, keywordList); // 取得第一筆相似文件摘要(關鍵句)           
 

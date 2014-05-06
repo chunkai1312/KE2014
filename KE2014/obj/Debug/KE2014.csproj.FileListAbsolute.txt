@@ -122,3 +122,4 @@ C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\bin\zh-Hant\WebMatrix.WebData.resources.dll
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Debug\KE2014.dll
 C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Debug\KE2014.pdb
+C:\Users\ChunKai\Documents\Visual Studio 2012\Projects\KE2014\KE2014\obj\Debug\KE2014.csprojResolveAssemblyReference.cache

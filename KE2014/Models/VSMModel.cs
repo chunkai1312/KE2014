@@ -341,7 +341,7 @@ namespace KE2014.Models
 
             for (int i = 0; i < sentences.Count(); i++)
             {
-                sentences[i] = Regex.Replace(sentences[i], @"<BR>", ""); // 句子含 <BR> 清掉
+                sentences[i] = Regex.Replace(sentences[i], @"<BR>", "");
                 sentences[i] = Regex.Replace(sentences[i], @"「", ""); 
                 sentences[i] = Regex.Replace(sentences[i], @"」", ""); 
 
@@ -394,7 +394,7 @@ namespace KE2014.Models
                 string source = reader.GetString(1);
                 string section = reader.GetString(2);
                 string title = reader.GetString(3);
-                // string author = reader.GetString(4) 產生不明錯誤
+                // string author = reader.GetString(4)
                 string author = null;
                 string pageURL = reader.GetString(5);
                 string postTime = reader.GetString(6);
@@ -419,7 +419,6 @@ namespace KE2014.Models
             List<string> keywords = new List<string>();
 
             string path = HttpContext.Current.Server.MapPath("~/Content/files/keywords.txt");
-
             StreamReader reader = new StreamReader(path, Encoding.UTF8);
             string line = null;
             while ((line = reader.ReadLine()) != null)
@@ -435,47 +434,81 @@ namespace KE2014.Models
         }
 
         /// <summary>
-        /// 讀出文件向量檔
+        /// 讀出 doc_vectors.txt
         /// </summary>
         /// <returns></returns>
-        public static string ReadVectorsFile()
+        public static string ReadDocVectorsFile()
         {
-            string path = HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt");
-
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/doc_vectors.txt");
             StreamReader reader = new StreamReader(path, Encoding.UTF8);
             string json = reader.ReadToEnd();
             reader.Close();
-
             return json;
         }
 
         /// <summary>
-        /// 寫入文件向量檔
+        /// 寫入 doc_vectors.txt
         /// </summary>
         /// <param name="content"></param>
-        public static void WriteVectorsFile(string content)
+        public static void WriteDocVectorsFile(string content)
         {
-            string path = HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt");
-
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/doc_vectors.txt");
             StreamWriter writer = new StreamWriter(path);
             writer.WriteLine(content);
             writer.Close();
         }
 
         /// <summary>
-        /// 檢查是否存在文件向量檔
+        /// 檢查是否存在 doc_vectors.txt
         /// </summary>
         /// <returns></returns>
-        public static bool IsExistVectorsFile()
+        public static bool IsExistDocVectorsFile()
         {
             bool isExistVectorsFile = false;
-
-            if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/files/vectors.txt")))
+            if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/files/doc_vectors.txt")))
             {
                 isExistVectorsFile = true;
             }
-
             return isExistVectorsFile;
+        }
+
+        /// <summary>
+        /// 檢查是否存在 keyword_docs.txt 
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsExistKeywordDocsFile()
+        {
+            bool isExistKeywordDocsFile = false;
+            if (File.Exists(HttpContext.Current.Server.MapPath("~/Content/files/keyword_docs.txt")))
+            {
+                isExistKeywordDocsFile = true;
+            }
+            return isExistKeywordDocsFile;
+        }
+
+        /// <summary>
+        /// 讀出 keyword_docs.txt 
+        /// </summary>
+        /// <returns></returns>
+        public static string ReadKeywordDocsFile()
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/keyword_docs.txt");
+            StreamReader reader = new StreamReader(path, Encoding.UTF8);
+            string json = reader.ReadToEnd();
+            reader.Close();
+            return json;
+        }
+
+        /// <summary>
+        /// 寫入 keyword_docs.txt 
+        /// </summary>
+        /// <param name="content"></param>
+        public static void WriteKeywordDocsFile(string content)
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Content/files/keyword_docs.txt");
+            StreamWriter writer = new StreamWriter(path);
+            writer.WriteLine(content);
+            writer.Close();
         }
     }
 }

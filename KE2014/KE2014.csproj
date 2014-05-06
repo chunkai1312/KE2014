@@ -177,11 +177,11 @@
     <Content Include="Content\css\alertify.bootstrap.css" />
     <Content Include="Content\css\alertify.core.css" />
     <Content Include="Content\css\alertify.default.css" />
+    <Content Include="Content\files\keywords.txt" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\layout.css" />
-    <Content Include="Content\files\keywords.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
@@ -192,6 +192,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\files\ke2014_hw1_m10209122_m10209124_m10209212_m10209216_.xlsx" />
+    <Content Include="Content\files\ke2014_hw2_m10209122_m10209124_m10209212_m10209216.xlsx" />
     <None Include="Properties\PublishProfiles\KE2014.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\banner.png" />
